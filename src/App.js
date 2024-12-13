@@ -114,7 +114,7 @@ const PortfolioSection = () => {
                   <iframe
                     width="560"
                     height="315"
-                    src="https://youtube.com/shorts/cXFxLfleH4A?feature=share"
+                    src="https://youtube.com/embed/cXFxLfleH4A?feature=share"
                     title="Video demo"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
