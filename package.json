@@ -1,7 +1,7 @@
 {
   "name": "personal-portfolio",
   "version": "1.0.0",
-  "main": "App.js",
+  "main": "index.js",
   "homepage": "https://alimujtaba02.github.io/INFT3101-Lab6",
   "scripts": {
     "start": "react-scripts start",
