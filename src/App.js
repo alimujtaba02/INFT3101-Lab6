@@ -84,19 +84,19 @@ const PortfolioSection = () => {
     {
       title: "Classwork",
       items: [
-        { title: "Classwork 1", description: "Learning Android Studio", details: "In our first Classwork, we learnt the basics of a new IDE (Android Studio) while using Kotlin to develop a basic 'Hello World' type app." },
-        { title: "Classwork 2", description: "Flutter: The Basics", details: "In our second classwork, we were tasked with getting accustomed to Flutter, since it is quite different from Kotlin with all the nesting. To learn this, we recreated the app from CW1, in Flutter." },
-        { title: "Classwork 3", description: "Incomplete", details: "Unfortunately, I was not able to complete CW3." },
+        { title: "Classwork 1", description: "Learning Android Studio", details: "<p>In our first Classwork, we learnt the basics of a new IDE (Android Studio) while using Kotlin to develop a basic 'Hello World' type app.</p>" },
+        { title: "Classwork 2", description: "Flutter: The Basics", details: "<p>In our second classwork, we were tasked with getting accustomed to Flutter, since it is quite different from Kotlin with all the nesting. To learn this, we recreated the app from CW1, in Flutter.</p>" },
+        { title: "Classwork 3", description: "Incomplete", details: "<p>Unfortunately, I was not able to complete CW3.</p>" },
       ],
     },
     {
       title: "Labs",
       items: [
-        { title: "Lab 1", description: "What was the Mobile Revolution?", details: `This lab was a research paper that explored the rise of mobile computing, a technology that, despite its recent development, has become mainstream. It traced the timeline of key innovations that made mobile devices portable and accessible to everyone, from early machines like the Osborne 1 to today's smartphones and laptops. The paper also prompted me to reflect on my personal experiences with mobile technology, considering its pros, cons, and the impact it has had on our lives. Read the full report <a href='Reports/lab-1.docx' download>here</a>.` },
-        { title: "Lab 2", description: "XML and DTD's", details: `In this lab, we learnt how to build DTD's for XML documents. We learnt what <code>&lt;!ELEMENT&gt;</code>'s were, and how to give them constraints with <code>&lt;!ATTLIST&gt;</code>. <code>&lt;!ATTLIST&gt;</code> is predominantly used to specify attribute types, such as <code>CDATA</code> for character data, <code>ID</code> for unique identifiers, <code>NMTOKEN</code> for tokens, as well as default values such as <code>#REQUIRED</code>, <code>#IMPLIED</code>, or <code>#FIXED</code>. Then, we populated an XML schema using our DTD` },
-        { title: "Lab 3", description: "Incomplete", details: `Unfortunately, I was not able to complete Lab 3.`},
-        { title: "Lab 4", description: "Objects in Dart", details: ` In this lab, I got the chance to revisit an Oject-Oriented Programming Staple, the Object. This lab was fairly simple, all it did was re-iterate what objects were, how they differ in Dart from other langauges, and provide some use cases. Read the full report <a href='/Reports/lab-4.docx' download>here</a>.` },
-        { title: "Lab 5", description: "Gestures in Dart", details: `In this lab, I did research on a core feature to flutter, the gesture. I learnt how gestures, such as <code>&lt;OnTap&gt;</code>; and <code>&lt;OnSwipe&gt;</code> work, as well as how they interact with widgets to create an immersive user experience. Read the whole report <a href='/Reports/lab-5.docx' download>here</a>.` },
+        { title: "Lab 1", description: "What was the Mobile Revolution?", details: `<p>This lab was a research paper that explored the rise of mobile computing, a technology that, despite its recent development, has become mainstream. It traced the timeline of key innovations that made mobile devices portable and accessible to everyone, from early machines like the Osborne 1 to today's smartphones and laptops. The paper also prompted me to reflect on my personal experiences with mobile technology, considering its pros, cons, and the impact it has had on our lives. Read the full report <a href='Reports/lab-1.docx' download>here</a>.</p>` },
+        { title: "Lab 2", description: "XML and DTD's", details: `<p>In this lab, we learnt how to build DTD's for XML documents. We learnt what <code>&lt;!ELEMENT&gt;</code>'s were, and how to give them constraints with <code>&lt;!ATTLIST&gt;</code>. <code>&lt;!ATTLIST&gt;</code> is predominantly used to specify attribute types, such as <code>CDATA</code> for character data, <code>ID</code> for unique identifiers, <code>NMTOKEN</code> for tokens, as well as default values such as <code>#REQUIRED</code>, <code>#IMPLIED</code>, or <code>#FIXED</code>. Then, we populated an XML schema using our DTD</p>` },
+        { title: "Lab 3", description: "Incomplete", details: `<p>Unfortunately, I was not able to complete Lab 3.</p>`},
+        { title: "Lab 4", description: "Objects in Dart", details: ` <p>In this lab, I got the chance to revisit an Oject-Oriented Programming Staple, the Object. This lab was fairly simple, all it did was re-iterate what objects were, how they differ in Dart from other langauges, and provide some use cases. Read the full report <a href='/Reports/lab-4.docx' download>here</a>.</p>` },
+        { title: "Lab 5", description: "Gestures in Dart", details: `<p>In this lab, I did research on a core feature to flutter, the gesture. I learnt how gestures, such as <code>&lt;OnTap&gt;</code>; and <code>&lt;OnSwipe&gt;</code> work, as well as how they interact with widgets to create an immersive user experience. Read the whole report <a href='/Reports/lab-5.docx' download>here</a>.</p>` },
       ],
     },
     {
@@ -150,7 +150,6 @@ const PortfolioSection = () => {
                 </button>
               </h2>
             </div>
-
             <div
               id={`collapse${index}`}
               className="collapse"
@@ -162,7 +161,10 @@ const PortfolioSection = () => {
                   <div key={idx} className="portfolio-card">
                     <h4>{item.title}</h4>
                     <p>{item.description}</p>
-                    <div className="details">{item.details}</div>
+                    <div
+                      className="details"
+                      dangerouslySetInnerHTML={{ __html: item.details }}
+                    />
                   </div>
                 ))}
               </div>
