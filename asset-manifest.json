@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/INFT3101-Lab6/static/css/main.de46a344.css",
-    "main.js": "/INFT3101-Lab6/static/js/main.0ec7a713.js",
+    "main.js": "/INFT3101-Lab6/static/js/main.202f4caa.js",
     "index.html": "/INFT3101-Lab6/index.html",
     "main.de46a344.css.map": "/INFT3101-Lab6/static/css/main.de46a344.css.map",
-    "main.0ec7a713.js.map": "/INFT3101-Lab6/static/js/main.0ec7a713.js.map"
+    "main.202f4caa.js.map": "/INFT3101-Lab6/static/js/main.202f4caa.js.map"
   },
   "entrypoints": [
     "static/css/main.de46a344.css",
-    "static/js/main.0ec7a713.js"
+    "static/js/main.202f4caa.js"
   ]
 }
