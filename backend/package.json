@@ -1,22 +1,25 @@
 {
-  "name": "backend",
+  "name": "personal-portfolio", 
   "version": "1.0.0",
-  "main": "index.js",
-  "homepage": "https://alimujtaba02.github.io/INFT3101-Lab6",
+  "main": "App.js",
+  "homepage": "https://alimujtaba02.github.io/INFT3101-Lab6",  
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "start": "react-scripts start",  
+    "build": "react-scripts build",  
+    "predeploy": "npm run build",  
+    "deploy": "gh-pages -d build"  
+  },
+  "dependencies": {
+    "react": "^18.0.0",  
+    "react-dom": "^18.0.0", 
+    "react-scripts": "4.0.3", 
+    "gh-pages": "^3.2.3"  
+  },
+  "devDependencies": {
+   
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "mongoose": "^8.8.4"
-  }
+  "description": ""  
 }
