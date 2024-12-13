@@ -7,10 +7,8 @@ import reportWebVitals from './reportWebVitals';  // (optional) For performance 
 
 // ReactDOM.render is used to render the root App component into the DOM element with id "root"
 ReactDOM.render(
-  <React.StrictMode>
-    <App />  {/* Your main App component */}
-  </React.StrictMode>,
-  document.getElementById('root')  // Renders the app into the 'root' element of the HTML
+  <App />, // Remove React.StrictMode for testing
+  document.getElementById('root')
 );
 
 // (optional) You can use reportWebVitals for measuring app performance
