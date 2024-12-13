@@ -1,14 +1,12 @@
-// frontend/src/index.js
-import React from 'react';       // Import React library
-import ReactDOM from 'react-dom'; // Import ReactDOM to render the app
-import App from './App.js';          // Import the main App component
-import reportWebVitals from './reportWebVitals';  // (optional) For performance tracking
+import React from 'react';
+import ReactDOM from 'react-dom/client';  // Use react-dom/client
+import './App.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-// ReactDOM.render is used to render the root App component into the DOM element with id "root"
-ReactDOM.render(
-  <App />, // Remove React.StrictMode for testing
-  document.getElementById('root')
+const root = ReactDOM.createRoot(document.getElementById('root')); // Create root element
+root.render(
+    <App />
 );
 
-// (optional) You can use reportWebVitals for measuring app performance
-reportWebVitals();
+reportWebVitals();  // Optional performance measurement
