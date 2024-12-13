@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes, Link } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import "./App.css";
 
 // Contact Form component
@@ -149,28 +149,32 @@ const PortfolioSection = () => {
 };
 
 // Main App component
+// Main App component
 function App() {
   return (
-    <div className="App">
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/portfolio">Portfolio</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      </nav>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/portfolio" element={<PortfolioSection />} />
-        <Route path="/contact" element={<ContactForm />} />
-      </Routes>
-    </div>
+    <Router>
+      <div className="App">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/portfolio">Portfolio</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+          </ul>
+        </nav>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/portfolio" component={PortfolioSection} />
+          <Route path="/contact" component={ContactForm} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
+
 export default App;
