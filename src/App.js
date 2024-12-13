@@ -159,9 +159,9 @@ const PortfolioSection = () => {
                     <h4>{item.title}</h4>
                     <p>{item.description}</p>
                     <div
-                      className="detailss"
+                      className="details"
                     />
-                    {item.details && (
+                    (
                       <div className="accordion" id={`nestedAccordion${index}-${idx}`}>
                         <div className="card">
                           <div className="card-header" id={`nestedHeading${index}-${idx}`}>
@@ -190,7 +190,7 @@ const PortfolioSection = () => {
                           </div>
                         </div>
                       </div>
-                    )}
+                    )
                   </div>
                 ))}
               </div>
