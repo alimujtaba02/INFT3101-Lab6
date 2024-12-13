@@ -102,34 +102,30 @@ const PortfolioSection = () => {
     {
       title: "Final Project",
       items: [
-        {
-          title: "Full Stack Application",
-          description: "Flappy Bird Clone",
-          details: (
-            <>
-              <p>
-                For the final, I worked with a group of 3 to create a Flappy Bird clone, and to make it full-stack, I decided to take the role of backend developer and integrate Firebase into the project. This added a cloud-based backend, enabling us to have a leaderboard for the app.
-              </p>
-              <p>Here is a video demo of some app gameplay:</p>
-              <div>
-                <iframe
-                  width="560"
-                  height="315"
-                  src="https://youtube.com/shorts/cXFxLfleH4A?feature=share" // Replace with your YouTube video ID
-                  title="Video demo"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </>
-          ),
+          {
+            title: "Full Stack Application",
+            description: "Flappy Bird Clone",
+            details: `
+                <p>
+                  For the final, I worked with a group of 3 to create a Flappy Bird clone, and to make it full-stack, I decided to take the role of backend developer and integrate Firebase into the project. This added a cloud-based backend, enabling us to have a leaderboard for the app.
+                </p>
+                <p>Here is a video demo of some app gameplay:</p>
+                <div>
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://youtube.com/shorts/cXFxLfleH4A?feature=share"
+                    title="Video demo"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              `,
+            },
+          ],
         },
-      ],
-    },
-  ];
-
-  
+      ]
   
   return (
     <div className="portfolio">
@@ -176,7 +172,7 @@ const PortfolioSection = () => {
                                 type="button"
                                 data-bs-toggle="collapse"
                                 data-bs-target={`#nestedCollapse${index}-${idx}`}
-                                aria-expanded="true"
+                                aria-expanded="false"
                                 aria-controls={`nestedCollapse${index}-${idx}`}
                               >
                                 More Details
@@ -190,8 +186,7 @@ const PortfolioSection = () => {
                             data-bs-parent={`#nestedAccordion${index}-${idx}`}
                           >
                             <div className="card-body">
-                              {/* Nested details can go here */}
-                              <p>Additional content here.</p>
+                              <div dangerouslySetInnerHTML={{ __html: item.details }} />
                             </div>
                           </div>
                         </div>
