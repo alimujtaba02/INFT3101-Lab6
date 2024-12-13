@@ -159,8 +159,7 @@ const PortfolioSection = () => {
                     <h4>{item.title}</h4>
                     <p>{item.description}</p>
                     <div
-                      className="details"
-                      dangerouslySetInnerHTML={{ __html: item.details }}
+                      className="detailss"
                     />
                     {item.details && (
                       <div className="accordion" id={`nestedAccordion${index}-${idx}`}>
