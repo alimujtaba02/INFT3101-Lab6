@@ -201,7 +201,7 @@ function App() {
         </nav>
 
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route  exact path ="/" component={HomePage} />
           <Route path="/portfolio" component={PortfolioSection} />
           <Route path="/contact" component={ContactForm} />
         </Switch>
