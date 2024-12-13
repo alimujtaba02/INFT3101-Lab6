@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Accordion, Card, Button } from 'react-bootstrap'
+
 
 // Contact Form component
 const ContactForm = () => {
@@ -134,13 +134,30 @@ const PortfolioSection = () => {
     <div className="portfolio">
       <h2>My Portfolio</h2>
       {portfolioData.map((section, index) => (
-        <Accordion key={index}>
-          <Card>
-            <Accordion.Toggle as={Button} variant="link" eventKey="0">
-              {section.title}
-            </Accordion.Toggle>
-            <Accordion.Collapse eventKey="0">
-              <Card.Body>
+        <div className="accordion" id={`accordion${index}`} key={index}>
+          <div className="card">
+            <div className="card-header" id={`heading${index}`}>
+              <h2 className="mb-0">
+                <button
+                  className="btn btn-link"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target={`#collapse${index}`}
+                  aria-expanded="true"
+                  aria-controls={`collapse${index}`}
+                >
+                  {section.title}
+                </button>
+              </h2>
+            </div>
+
+            <div
+              id={`collapse${index}`}
+              className="collapse"
+              aria-labelledby={`heading${index}`}
+              data-bs-parent={`#accordion${index}`}
+            >
+              <div className="card-body">
                 {section.items.map((item, idx) => (
                   <div key={idx} className="portfolio-card">
                     <h4>{item.title}</h4>
@@ -148,23 +165,22 @@ const PortfolioSection = () => {
                     <div className="details">{item.details}</div>
                   </div>
                 ))}
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
-        </Accordion>
+              </div>
+            </div>
+          </div>
+        </div>
       ))}
     </div>
   );
 };
 
 
-// Main App component
 function App() {
   return (
     <Router>
       <div className="App">
         {/* Navbar using Bootstrap */}
-        <nav className="navbar navbar-expand-lg fixed-top" syle="background-color: #00734d">
+        <nav className="navbar navbar-expand-lg fixed-top" style={{backgroundColor: '#00734d'}}>
           <a className="navbar-brand" href="/">My Portfolio</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -195,3 +211,4 @@ function App() {
 }
 
 export default App;
+
