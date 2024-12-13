@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/INFT3101-Lab6/static/css/main.de46a344.css",
+    "main.js": "/INFT3101-Lab6/static/js/main.88a2ae55.js",
+    "index.html": "/INFT3101-Lab6/index.html",
+    "main.de46a344.css.map": "/INFT3101-Lab6/static/css/main.de46a344.css.map",
+    "main.88a2ae55.js.map": "/INFT3101-Lab6/static/js/main.88a2ae55.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.de46a344.css",
+    "static/js/main.88a2ae55.js"
+  ]
+}
