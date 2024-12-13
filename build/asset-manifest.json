@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/INFT3101-Lab6/static/css/main.59c1c158.chunk.css",
+    "main.js": "/INFT3101-Lab6/static/js/main.06d7751f.chunk.js",
+    "main.js.map": "/INFT3101-Lab6/static/js/main.06d7751f.chunk.js.map",
+    "runtime-main.js": "/INFT3101-Lab6/static/js/runtime-main.aa24dbfd.js",
+    "runtime-main.js.map": "/INFT3101-Lab6/static/js/runtime-main.aa24dbfd.js.map",
+    "static/css/2.0b7f02c2.chunk.css": "/INFT3101-Lab6/static/css/2.0b7f02c2.chunk.css",
+    "static/js/2.e471ec64.chunk.js": "/INFT3101-Lab6/static/js/2.e471ec64.chunk.js",
+    "static/js/2.e471ec64.chunk.js.map": "/INFT3101-Lab6/static/js/2.e471ec64.chunk.js.map",
+    "index.html": "/INFT3101-Lab6/index.html",
+    "static/css/2.0b7f02c2.chunk.css.map": "/INFT3101-Lab6/static/css/2.0b7f02c2.chunk.css.map",
+    "static/css/main.59c1c158.chunk.css.map": "/INFT3101-Lab6/static/css/main.59c1c158.chunk.css.map",
+    "static/js/2.e471ec64.chunk.js.LICENSE.txt": "/INFT3101-Lab6/static/js/2.e471ec64.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.aa24dbfd.js",
+    "static/css/2.0b7f02c2.chunk.css",
+    "static/js/2.e471ec64.chunk.js",
+    "static/css/main.59c1c158.chunk.css",
+    "static/js/main.06d7751f.chunk.js"
+  ]
+}
