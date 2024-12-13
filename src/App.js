@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Routes, Link } from "react-router-dom"
 import "./App.css";
 
 // Contact Form component
@@ -14,7 +15,7 @@ const ContactForm = () => {
     <div className="contact-form">
       <h2>Contact Me</h2>
       <form
-        action="hhttps://formspree.io/f/mbljebna"
+        action="https://formspree.io/f/mbljebna"
         method="POST"
         onSubmit={handleSubmit}
       >
@@ -151,11 +152,25 @@ const PortfolioSection = () => {
 function App() {
   return (
     <div className="App">
-      <HomePage />
-      <PortfolioSection />
-      <ContactForm />
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/portfolio">Portfolio</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/portfolio" element={<PortfolioSection />} />
+        <Route path="/contact" element={<ContactForm />} />
+      </Routes>
     </div>
   );
 }
-
 export default App;
