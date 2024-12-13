@@ -1,8 +1,7 @@
 // frontend/src/index.js
 import React from 'react';       // Import React library
 import ReactDOM from 'react-dom'; // Import ReactDOM to render the app
-import './App.css';            // Import the global CSS file (optional)
-import App from './App';          // Import the main App component
+import App from './App.js';          // Import the main App component
 import reportWebVitals from './reportWebVitals';  // (optional) For performance tracking
 
 // ReactDOM.render is used to render the root App component into the DOM element with id "root"
