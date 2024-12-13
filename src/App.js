@@ -127,80 +127,73 @@ const PortfolioSection = () => {
         },
       ]
   
-  return (
-    <div className="portfolio">
-      <h2>My Portfolio</h2>
-      {portfolioData.map((section, index) => (
-        <div className="accordion" id={`accordion${index}`} key={index}>
-          <div className="card">
-            <div className="card-header" id={`heading${index}`}>
-              <h2 className="mb-0">
-                <button
-                  className="btn btn-link"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target={`#collapse${index}`}
-                  aria-expanded="true"
-                  aria-controls={`collapse${index}`}
+
+      return (
+        <div className="portfolio">
+          <h2>My Portfolio</h2>
+          {portfolioData.map((section, index) => (
+            <div className="accordion" id={`accordion${index}`} key={index}>
+              <div className="card">
+                <div className="card-header" id={`heading${index}`}>
+                  <h2 className="mb-0">
+                    <button
+                      className="btn btn-link"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target={`#collapse${index}`}
+                      aria-expanded="true"
+                      aria-controls={`collapse${index}`}
+                    >
+                      {section.title}
+                    </button>
+                  </h2>
+                </div>
+                <div
+                  id={`collapse${index}`}
+                  className="collapse"
+                  aria-labelledby={`heading${index}`}
+                  data-bs-parent={`#accordion${index}`}
                 >
-                  {section.title}
-                </button>
-              </h2>
-            </div>
-            <div
-              id={`collapse${index}`}
-              className="collapse"
-              aria-labelledby={`heading${index}`}
-              data-bs-parent={`#accordion${index}`}
-            >
-              <div className="card-body">
-                {section.items.map((item, idx) => (
-                  <div key={idx} className="portfolio-card">
-                    <h4>{item.title}</h4>
-                    <p>{item.description}</p>
-                    <div
-                      className="details"
-                    />
-                    (
-                      <div className="accordion" id={`nestedAccordion${index}-${idx}`}>
-                        <div className="card">
-                          <div className="card-header" id={`nestedHeading${index}-${idx}`}>
-                            <h2 className="mb-0">
-                              <button
-                                className="btn btn-link"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target={`#nestedCollapse${index}-${idx}`}
-                                aria-expanded="false"
-                                aria-controls={`nestedCollapse${index}-${idx}`}
-                              >
-                                More Details
-                              </button>
-                            </h2>
-                          </div>
-                          <div
-                            id={`nestedCollapse${index}-${idx}`}
-                            className="collapse"
-                            aria-labelledby={`nestedHeading${index}-${idx}`}
-                            data-bs-parent={`#nestedAccordion${index}-${idx}`}
-                          >
-                            <div className="card-body">
-                              <div dangerouslySetInnerHTML={{ __html: item.details }} />
-                            </div>
+                  <div className="card-body">
+                    {section.items.map((item, idx) => (
+                      <div key={idx} className="portfolio-card">
+                        <h4>{item.title}</h4>
+                        <p>{item.description}</p>
+    
+                        {/* Add button to toggle details visibility */}
+                        <button
+                          className="btn btn-link"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target={`#details${index}-${idx}`}
+                          aria-expanded="false"
+                          aria-controls={`details${index}-${idx}`}
+                        >
+                          More Details
+                        </button>
+    
+                        {/* Hidden details section, shown when button clicked */}
+                        <div
+                          id={`details${index}-${idx}`}
+                          className="collapse"
+                          aria-labelledby={`details${index}-${idx}`}
+                        >
+                          <div className="card-body">
+                            <div
+                              dangerouslySetInnerHTML={{ __html: item.details }}
+                            />
                           </div>
                         </div>
                       </div>
-                    )
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
-      ))}
-    </div>
-  );
-};
+      );
+    };
 
 function App() {
   return (
