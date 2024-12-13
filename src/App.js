@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Accordion, Card, Button } from 'react-bootstrap'
 
 // Contact Form component
 const ContactForm = () => {
@@ -127,46 +129,61 @@ const PortfolioSection = () => {
     },
   ];
 
+  
   return (
     <div className="portfolio">
       <h2>My Portfolio</h2>
       {portfolioData.map((section, index) => (
-        <div key={index} className="portfolio-section">
-          <h3>{section.title}</h3>
-          <div className="portfolio-items">
-            {section.items.map((item, idx) => (
-              <div key={idx} className="portfolio-card">
-                <h4>{item.title}</h4>
-                <p>{item.description}</p>
-                <div className="details">{item.details}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <Accordion key={index}>
+          <Card>
+            <Accordion.Toggle as={Button} variant="link" eventKey="0">
+              {section.title}
+            </Accordion.Toggle>
+            <Accordion.Collapse eventKey="0">
+              <Card.Body>
+                {section.items.map((item, idx) => (
+                  <div key={idx} className="portfolio-card">
+                    <h4>{item.title}</h4>
+                    <p>{item.description}</p>
+                    <div className="details">{item.details}</div>
+                  </div>
+                ))}
+              </Card.Body>
+            </Accordion.Collapse>
+          </Card>
+        </Accordion>
       ))}
     </div>
   );
 };
 
-// Main App component
+
 // Main App component
 function App() {
   return (
     <Router>
       <div className="App">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/portfolio">Portfolio</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-          </ul>
+        {/* Navbar using Bootstrap */}
+        <nav className="navbar navbar-expand-lg fixed-top" syle="background-color: #00734d">
+          <a className="navbar-brand" href="/">My Portfolio</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link to="/" className="nav-link">Home</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/portfolio" className="nav-link">Portfolio</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/contact" className="nav-link">Contact</Link>
+              </li>
+            </ul>
+          </div>
         </nav>
+
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/portfolio" component={PortfolioSection} />
